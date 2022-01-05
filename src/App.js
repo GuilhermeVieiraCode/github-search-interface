@@ -1,5 +1,6 @@
 import Layout from "./components/layout";
 import Profile from "./components/profile";
+import { Repositories } from "./components/repositories";
 import { Destyle } from "./global/destyle";
 
 const App = () => {
@@ -8,8 +9,7 @@ const App = () => {
       <Destyle/>
       <Layout>
         <Profile />
-        <div>Repositories</div>
-        <div>Starred</div>
+        <Repositories />
       </Layout>
 
     </main>
