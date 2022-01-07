@@ -8,7 +8,7 @@ Frontend application that consumes the github public api to search users by user
 
 ### Preview
 
-![plot](./images/preview.png)
+![plot](/images/preview.png)
 
 ### Libraries used
 
