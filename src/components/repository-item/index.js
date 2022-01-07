@@ -1,13 +1,14 @@
 import React from 'react';
+import * as Styled from './styled';
 
 export const RepositoryItem = ({name, linkToRepo, fullName}) => {
     return(
-        <div>
-            <h2>{name}</h2>
-            <h4>full name:</h4>
-            <a href={linkToRepo} target="_blank" rel="noreferrer">
+        <Styled.Wrapper>
+            <Styled.WrapperTitle>{name}</Styled.WrapperTitle>
+            <Styled.WrapperFullName>full name:</Styled.WrapperFullName>
+            <Styled.WrapperLink href={linkToRepo} target="_blank" rel="noreferrer">
                 {fullName}
-            </a>
-        </div>
+            </Styled.WrapperLink>
+        </Styled.Wrapper>
     )
 }

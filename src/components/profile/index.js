@@ -28,6 +28,13 @@ const Profile = () => {
                         <p>{githubState.user.company}</p>
                     </Styled.WrapperGeneric>
                     <Styled.WrapperGeneric>
+                        <h3>Blog:</h3>
+                        <a href={githubState.user.blog} 
+                        target="_blank"
+                        rel="noreferrer"
+                        >{githubState.user.blog}</a>
+                    </Styled.WrapperGeneric>
+                    <Styled.WrapperGeneric>
                         <h3>Location:</h3>
                         <p>{githubState.user.location}</p>
                     </Styled.WrapperGeneric>

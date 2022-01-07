@@ -15,7 +15,7 @@ export const Header = () => {
     <header>
         <Styled.Wrapper>
             <input  type="text" 
-                    placeholder="Type a username..." 
+                    placeholder="Type a Github username..." 
                     onChange={(event) => setUsernameForSearch(event.target.value)}></input>
             <button type="Submit" onClick={submitGetUser}>Search</button>
         </Styled.Wrapper>

@@ -3,6 +3,7 @@ import api from '../service/api';
 
 export const GithubContext = createContext({
     loading: false,
+    hasUser: false,
     user: {},
     repositories: [],
     starred: [],
@@ -31,10 +32,16 @@ const GithubProvider = ({children}) => {
     });
 
     const getUser = (username) => {
+        setGithubState((prevState) => ({
+            ...prevState,
+            loading: !prevState.loading,
+        }));
+
         api.get(`users/${username}`)
             .then(({ data }) => {
                 setGithubState((prevState) => ({
                     ...prevState,
+                    hasUser: true,
                     user: {
                         id: data.id,
                         avatar: data.avatar_url,
@@ -51,12 +58,42 @@ const GithubProvider = ({children}) => {
                         public_repos: data.public_repos
                     }
                 }));
+        }).finally(() => {
+            setGithubState((prevState) => ({
+                ...prevState,
+                loading: !prevState.loading,
+            }));
         });
     }
+
+    const getUserRepos = (username) => {
+        api.get(`users/${username}/repos`)
+            .then(({ data }) => {
+                console.log("Repositories Data:" + JSON.stringify(data));
+                setGithubState((prevState) => ({
+                    ...prevState,
+                    repositories: data,
+                }));
+        });
+    }
+    
+    const getUserStarred = (username) => {
+        api.get(`users/${username}/starred`)
+            .then(({ data }) => {
+                console.log("Starred Data:" + JSON.stringify(data));
+                setGithubState((prevState) => ({
+                    ...prevState,
+                    starred: data,
+                }));
+        });
+    }    
     
     const contextValue = {
         githubState,
         getUser: useCallback((username) => getUser(username), []),
+        getUserRepos: useCallback((username) => getUserRepos(username), []),
+        getUserStarred: useCallback((username) => getUserStarred(username), []),
+
     }
 
     return(
