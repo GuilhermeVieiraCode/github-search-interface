@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Styled from './styled';
-import { Header } from '../header';
+import { Header } from '../Header';
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
     return(
         <Styled.WrapperLayout>
             <Header />
@@ -10,5 +10,3 @@ const Layout = ({ children }) => {
         </Styled.WrapperLayout>
     );
 };
-
-export default Layout;

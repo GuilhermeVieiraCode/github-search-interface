@@ -2,7 +2,7 @@ import React from 'react';
 import useGithub from '../../hooks/github-hooks';
 import * as Styled from './styled';
 
-const Profile = () => {
+export const Profile = () => {
     const { githubState } = useGithub();
 
     return(
@@ -62,6 +62,3 @@ const Profile = () => {
     );
 }
         
-              
-
-export default Profile;

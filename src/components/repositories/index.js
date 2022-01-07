@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useGithub from '../../hooks/github-hooks';
-import { RepositoryItem } from '../repository-item';
+import { RepositoryItem } from '../Repository-Item';
 import * as Styled from './styled';
 
 export const Repositories = () => {

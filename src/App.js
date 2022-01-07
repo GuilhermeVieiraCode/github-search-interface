@@ -1,7 +1,7 @@
-import Layout from "./components/layout";
-import { NoSearch } from "./components/no-search";
-import Profile from "./components/profile";
-import { Repositories } from "./components/repositories";
+import { Layout } from "./components/Layout";
+import { NoSearch } from "./components/No-Search";
+import { Profile } from "./components/Profile";
+import { Repositories } from "./components/Repositories";
 import useGithub from "./hooks/github-hooks";
 
 const App = () => {
